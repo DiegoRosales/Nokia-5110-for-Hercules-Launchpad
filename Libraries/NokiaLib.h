@@ -2,17 +2,16 @@
  * Nokia 5110 library of basic functions for the Cortex R Family,
  * more specifically for the Hercules Launchpad
  *
- * Version 1.01
+ * Version 1.1
  *
  * By: Diego Rosales
  * inspired by several codes such as Jim Lindblom's and Julian Ilett's codes
  *
  * Created on January 26 / 2014
- * Last edited on February 1 / 2014
+ * Last edited on February 19 / 2014
  *
- * Recent changes: Added "recent changes" category,
- * added the rtiNotification function so that this is the only file
- * you need to use, addedSetBacklight
+ * Recent changes: Moved to software SPI with the HET ports
+ * to the integrated SPI driver.
  *
  * License: FREE FOR ALL!! just don't use it to destroy the world
  *
@@ -23,7 +22,8 @@
  * Note that this code assumes that the basic components
  * are created by HALcoGen, such as "het.h" and "gio.h".
  * This code also assumes one RTI counter with enabled interrupts
- * for more info go to www.produccionyelectronica.blogspot.com
+ * for more info go to www.produccionyelectronica.blogspot.com and
+ * http://produccionyelectronica.blogspot.mx/2014/01/hercules-launchpad-6-nokia-5110-lcd.html
  *
  * THIS IS WORK IN PROGRSS! DO NOT ASSUME EVERYTHING WILL WORK
  * BECAUSE IT MAY OR MAY NOT WORK
@@ -48,14 +48,13 @@
 #define WHITE true
 #define BLACK false
 
+
 // Pin definition
 #define LIGHTPIN 0 // Light pin (N2HET, PWM)
 #define VCCPIN 2 // Vcc pin (N2HET)
-#define CLKPIN 4 // Clock signal pin (SPI1)
-#define DINPIN 6 // Data in (MOSI) pin (SPI1)
-#define DCPIN 10 // Data/Command pin (N2HET)
-#define CEPIN 12 // Chip-enable pin (GPIO Module, not N2HET). Compatibility for Booster Pack ports
-#define RSTPIN 14 // Reset pin (N2HET)
+#define DCPIN 4 // Data/Command pin (N2HET)
+#define RSTPIN 6 // Reset pin (N2HET)
+
 
 // Function prototypes
 void displayInit(void);

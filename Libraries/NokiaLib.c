@@ -2,17 +2,16 @@
  * Nokia 5110 library of basic functions for the Cortex R Family,
  * more specifically for the Hercules Launchpad
  *
- * Version 1.01
+ * Version 1.1
  *
  * By: Diego Rosales
  * inspired by several codes such as Jim Lindblom's and Julian Ilett's codes
  *
  * Created on January 26 / 2014
- * Last edited on February 1 / 2014
+ * Last edited on February 19 / 2014
  *
- * Recent changes: Added "recent changes" category,
- * added the rtiNotification function so that this is the only file
- * you need to use, added setBackLight
+ * Recent changes: Moved to software SPI with the HET ports
+ * to the integrated SPI driver.
  *
  * License: FREE FOR ALL!! just don't use it to destroy the world
  *
@@ -23,7 +22,8 @@
  * Note that this code assumes that the basic components
  * are created by HALcoGen, such as "het.h" and "gio.h".
  * This code also assumes one RTI counter with enabled interrupts
- * for more info go to www.produccionyelectronica.blogspot.com
+ * for more info go to www.produccionyelectronica.blogspot.com and
+ * http://produccionyelectronica.blogspot.mx/2014/01/hercules-launchpad-6-nokia-5110-lcd.html
  *
  * THIS IS WORK IN PROGRSS! DO NOT ASSUME EVERYTHING WILL WORK
  * BECAUSE IT MAY OR MAY NOT WORK
@@ -33,12 +33,19 @@
 
 // Variable affected by the interrupts
 bool rtiBreak = false;
+volatile spiDAT1_t config;
 
 // Display buffer variable
 volatile byte displayBuffer[xLength*yLength];
 
 void displayInit(void)
 {
+	// SPI Variables
+	config.CS_HOLD = false;
+	config.WDEL = true;
+	config.DFSEL = SPI_FMT_0;
+	config.CSNR = 0x00;
+
 	// Sets up the environment
 	_enable_IRQ(); // This enables interrupts
 	rtiEnableNotification(rtiNOTIFICATION_COMPARE0); // This enables the Real Time Interrupt notification
@@ -70,19 +77,7 @@ void writeData(byte data, bool d_c)
 	else // command data
 		gioSetBit(hetPORT1, DCPIN, 0);
 
-	gioSetBit(hetPORT1, CEPIN, 0); // CE = 1 -> 0 (active low)
-	int i;
-	for(i = 7; i>=0; i--) // Sends blocks of 8 bits
-	{
-		gioSetBit(hetPORT1, CLKPIN, 0); // CLK = 1 -> 0
-		gioSetBit(hetPORT1, DINPIN, BIT(data, i)); // set bit 'i'
-		ckDelay(); // Waits half CK period
-		gioSetBit(hetPORT1, CLKPIN, 1); // CK = 0 -> 1
-		ckDelay(); // Waits the other half CK period
-	}
-
-	// CE = 0 -> 1
-	gioSetBit(hetPORT1, CEPIN, 1);
+	spiTransmitData(spiREG1, (spiDAT1_t *)&config, 1, (unsigned short int *)&data);
 }
 
 // Sets an all white or an all black display

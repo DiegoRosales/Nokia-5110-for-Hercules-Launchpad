@@ -35,13 +35,4 @@
 void bufferSetCharacter(byte character, byte x, byte y);
 void bufferSetString(byte *string, byte size, byte x, byte y);
 
-
-
-
-
-
-
-
-
-
 #endif
