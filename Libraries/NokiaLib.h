@@ -2,22 +2,21 @@
  * Nokia 5110 library of basic functions for the Cortex R Family,
  * more specifically for the Hercules Launchpad
  *
- * Version 1.1
+ * Version 1.11
  *
  * By: Diego Rosales
  * inspired by several codes such as Jim Lindblom's and Julian Ilett's codes
  *
  * Created on January 26 / 2014
- * Last edited on February 19 / 2014
+ * Last edited on February 20 / 2014
  *
- * Recent changes: Moved to software SPI with the HET ports
- * to the integrated SPI driver.
+ * Recent changes: Changed the default SPI1 CS1 pin to the GIO[6] pin
+ * to make it compatible with the standard boosterpack pinout
  *
  * License: FREE FOR ALL!! just don't use it to destroy the world
  *
- * The order of the pins can be anyone, as it does not use
- * any hardware SPI interface, but a software one instead
- * to change the pins, just change the definitions in NokiaLib.h
+ * The order of the non-SPI pins can be anyone.
+ * To change the pins, just change the pin definition in NokiaLib.h
  *
  * Note that this code assumes that the basic components
  * are created by HALcoGen, such as "het.h" and "gio.h".
@@ -54,7 +53,7 @@
 #define VCCPIN 2 // Vcc pin (N2HET)
 #define DCPIN 4 // Data/Command pin (N2HET)
 #define RSTPIN 6 // Reset pin (N2HET)
-
+#define CEPIN 6 // Chip-enable pin for compatibility with boosterpack standard pinout
 
 // Function prototypes
 void displayInit(void);
