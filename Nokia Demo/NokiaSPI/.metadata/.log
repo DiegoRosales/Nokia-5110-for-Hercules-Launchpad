@@ -1,0 +1,60 @@
+!SESSION 2014-02-19 11:06:16.249 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_MX
+Framework arguments:  -product com.ti.ccstudio.branding.product -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product -data D:\Hercules\NokiaSPI -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-02-19 11:06:19.578
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY com.ti.ccstudio.buildDefinitions.core 2 0 2014-02-19 11:07:48.074
+!MESSAGE Unrecognized option setting '--elf' for tool 'com.ti.ccstudio.buildDefinitions.TMS470_5.1.exe.compilerDebug.1840542801'
+
+!ENTRY com.ti.ccstudio.buildDefinitions.core 2 0 2014-02-19 11:07:48.076
+!MESSAGE Unrecognized option setting '--little' for tool 'com.ti.ccstudio.buildDefinitions.TMS470_5.1.exe.linkerDebug.1813751098'
+
+!ENTRY com.ti.ccstudio.buildDefinitions.core 2 0 2014-02-19 11:07:48.113
+!MESSAGE Unrecognized option setting '--elf' for tool 'com.ti.ccstudio.buildDefinitions.TMS470_5.1.exe.compilerRelease.485345744'
+
+!ENTRY com.ti.ccstudio.buildDefinitions.core 2 0 2014-02-19 11:07:48.116
+!MESSAGE Unrecognized option setting '--little' for tool 'com.ti.ccstudio.buildDefinitions.TMS470_5.1.exe.linkerRelease.1428854739'
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-02-19 11:07:49.105
+!MESSAGE Indexed 'NokiaSPI' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-02-19 11:07:49.563
+!MESSAGE Indexed 'NokiaSPI' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2014-02-19 11:42:11.259
+!MESSAGE DS_ERROR: IcePick: Error connecting to the target: (Error -151 @ 0x0) One of the FTDI driver functions used during the connect returned bad status or an error. The cause may one or more of: invalid emulator serial number, blank emulator EEPROM, missing FTDI drivers, faulty USB cable. Use the xds100serial command-line utility in the 'common/uscif' folder to verify the emulator can be located. (Emulation package 5.1.232.0) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2014-02-19 11:42:11.316
+!MESSAGE DS_ERROR: Error connecting to the target:
+(Error -151 @ 0x0)
+One of the FTDI driver functions used during
+the connect returned bad status or an error.
+The cause may one or more of: invalid emulator serial number,
+blank emulator EEPROM, missing FTDI drivers, faulty USB cable.
+Use the xds100serial command-line utility in the 'common/uscif'
+folder to verify the emulator can be located.
+(Emulation package 5.1.232.0)
+

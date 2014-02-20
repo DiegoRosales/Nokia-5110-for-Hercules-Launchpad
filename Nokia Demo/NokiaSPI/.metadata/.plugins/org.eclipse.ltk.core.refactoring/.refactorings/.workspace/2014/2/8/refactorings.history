@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/NokiaSPI/source/adc.c" element2="/NokiaSPI/source/can.c" element3="/NokiaSPI/source/dcc.c" element4="/NokiaSPI/source/mibspi.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1392831588282"/>
+</session>
